@@ -4,13 +4,17 @@
 #include <stdint.h>
 #include <stddef.h>
 
-#include "../sysarena/include/sysarena.h"
-#include "../sysarena/include/types.h"
+#include "sysarena/sysarena.h"
+#include "sysarena/types.h"
 
 #include "runtime/objects.h"
 #include "runtime/types.h"
 #include "runtime/zynk_enviroment.h"
 
-typedef Value (*ZynkFuncPtr)(ZynkEnv* env, struct ZynkArray* args);
+// Customizable def's
+
+#define TABLE_CAPACITY 1024
+#define END_CHAR '\0'
+#define NOTHING
 
 #endif

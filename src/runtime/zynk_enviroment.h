@@ -1,26 +1,40 @@
 #ifndef ZYNK_ENVIROMENT
 #define ZYNK_ENVIROMENT
 
+
 #include "../common.h"
+#include "memory.h"
 #include "types.h"
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
+#include "assign.h"
+#include "hash.h"
+#include "../sysarena/sysarena.h"
 
-typedef struct ZynkEnvEntry {
+struct ZynkEnvEntry {
   char *name;
-  Value value;
-  struct ZynkEnvEntry *next; // manejo de colisiones
-} ZynkEnvEntry;
+  Value value; 
+};
 
-typedef struct ZynkEnvTable {
-  ZynkEnvEntry** entries;
+struct ZynkEnvTable {
+  struct ZynkEnvEntry** entries;
   size_t capacity;
   size_t count;
-} ZynkEnvTable;
+};
 
-typedef struct ZynkEnv {
-  ZynkEnvTable local;
-  ZynkEnv *enclosing;
-} ZynkEnv;
+struct ZynkEnv {
+  struct ZynkEnvTable *local;
+  struct ZynkEnv *enclosing; 
+};
 
+bool zynkEnvInit(ZynkEnv *env, size_t capacity, ZynkEnv *enclosing);
+bool initZynkTable(ZynkEnvTable *table, size_t capacity);
+bool freeZynkTable(ArenaManager *manager, ZynkEnvTable *table);
+bool zynkTableSet(ZynkEnv *env, const char *str, Value value);
+bool zynkTableNew(ZynkEnv *env, const char *str, Value value);
+Value zynkTableGet(ZynkEnv *env, const char *str);
+bool zynkTableDelete(ZynkEnv *env, const char *str);
+ZynkEnvEntry* zynkFindEntry(ZynkEnv *env, const char *key, bool niu);
 
-
-#endif
+#endif // ZYNK_ENVIROMENT

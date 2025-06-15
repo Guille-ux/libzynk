@@ -1,7 +1,10 @@
-#ifndef ZYNKL_OBJECTS
-#define ZYNKL_OBJECTS
+#ifndef ZYNK_OBJECTS
+#define ZYNK_OBJECTS
 
 #include "../common.h"
+#include "types.h"     
+
+
 
 struct ZynkString {
   char *string;
@@ -10,12 +13,13 @@ struct ZynkString {
 
 struct ZynkFunction {
   const char *name;
-  ZynkFuncPtr func_ptr;
+  ZynkFuncPtr func_ptr; 
 };
 
 struct ZynkArray {
   size_t len;
-  Value* array;
+  Value* array; 
 };
 
-#endif
+
+#endif // ZYNKL_OBJECTS
