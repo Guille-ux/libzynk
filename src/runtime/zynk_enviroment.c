@@ -37,13 +37,19 @@ bool freeZynkTable(ArenaManager *manager, ZynkEnvTable *table) {
   } 
   for (size_t i=0;i<table->capacity;i++) {
     if (table->entries[i]==NULL) {
+      continue;
+    }
+    if (table->entries[i]==NULL) continue;
+    if (sysarena_free(manager, table->entries[i])==false){
       return false;
     }
-    if (sysarena_free(manager, table->entries[i]->name)==false || sysarena_free(manager, table->entries[i])==false){
+    if (table->entries[i]->name==NULL) continue;
+    else if (sysarena_free(manager, table->entries[i]->name)==false){
       return false;
     }
+    table->entries[i]->name=NULL;
+    table->entries[i]=NULL;
   }
-  table->capacity=0;
   return (sysarena_free(manager, table->entries) && sysarena_free(manager, table));
 }
 bool zynkTableSet(ZynkEnv *env, const char *str, Value value) {
