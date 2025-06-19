@@ -9,22 +9,22 @@
 #include "assign.h"
 #include "../sysarena/sysarena.h"
 
-bool zynkEnvInit(ZynkEnv *env, size_t capacity, ZynkEnv *enclosing) {
+bool zynkEnvInit(ZynkEnv *env, size_t capacity, ZynkEnv *enclosing, ArenaManager *manager) {
   if (env==NULL) {
     return false; //no existe xD
   }
   env->enclosing=enclosing;
-  return initZynkTable(env->local, capacity);
+  return initZynkTable(env->local, capacity, manager);
 }
 
-bool initZynkTable(ZynkEnvTable *table, size_t capacity) {
+bool initZynkTable(ZynkEnvTable *table, size_t capacity, ArenaManager *manager) {
   if (table==NULL || table->entries==NULL) {
     return false; // no existe xD
   }
   table->capacity=capacity;
   for (size_t i=0;i<capacity;i++) {
     if (table->entries[i]==NULL){
-      return false;
+      table->entries[i]=(ZynkEnvEntry *)sysarena_alloc(manager, sizeof(ZynkEnvEntry));
     }
     table->entries[i]->name=NULL;
     table->entries[i]->value=zynkNull();
@@ -57,15 +57,21 @@ bool zynkTableSet(ZynkEnv *env, const char *str, Value value) {
   entry->value=value;
   return true;
 }
-bool zynkTableNew(ZynkEnv *env, const char *str, Value value) {
+bool zynkTableNew(ZynkEnv *env, const char *str, Value value, ArenaManager *manager) {
   if (env==NULL || str==NULL || env->local->capacity==0 || env->local->count == env->local->capacity || env->local==NULL) {
     return false;
   }
   ZynkEnvEntry *entry=zynkFindEntry(env, str, true);
   if (entry==NULL) {
     return false;
+  } else if (entry->name==NULL) {
+    char *name = (char *)sysarena_alloc(manager, zynk_len(str, END_CHAR)+1);
+    entry->value = value;
+    zynk_cpy(name, str, zynk_len(str, END_CHAR)+1);
+    entry->name=name;
+  } else {
+    return false;
   }
-  entry->value=value;
   env->local->count++;
   return true;
 }
@@ -79,14 +85,15 @@ Value zynkTableGet(ZynkEnv *env, const char *str) {
   }
   return entry->value;
 }
-bool zynkTableDelete(ZynkEnv *env, const char *str) {
-  if (env==NULL || str==NULL || env->local->capacity==0 || env->local==NULL) {
+bool zynkTableDelete(ZynkEnv *env, const char *str, ArenaManager *manager) {
+  if (env==NULL || str==NULL || env->local->capacity==0 || env->local==NULL || env->local->entries==NULL) {
     return false;
   }
   ZynkEnvEntry *entry=zynkFindEntry(env, str, false);
   if (entry==NULL || entry->name == NULL) {
     return false;
   }
+  sysarena_free(manager, entry->name);
   entry->name=NULL;
   entry->value=zynkNull();
   env->local->count--;

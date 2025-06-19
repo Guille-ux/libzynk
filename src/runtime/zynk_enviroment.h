@@ -28,13 +28,13 @@ struct ZynkEnv {
   struct ZynkEnv *enclosing; 
 };
 
-bool zynkEnvInit(ZynkEnv *env, size_t capacity, ZynkEnv *enclosing);
-bool initZynkTable(ZynkEnvTable *table, size_t capacity);
+bool zynkEnvInit(ZynkEnv *env, size_t capacity, ZynkEnv *enclosing, ArenaManager *manager);
+bool initZynkTable(ZynkEnvTable *table, size_t capacity, ArenaManager *manager);
 bool freeZynkTable(ArenaManager *manager, ZynkEnvTable *table);
 bool zynkTableSet(ZynkEnv *env, const char *str, Value value);
-bool zynkTableNew(ZynkEnv *env, const char *str, Value value);
+bool zynkTableNew(ZynkEnv *env, const char *str, Value value, ArenaManager *manager);
 Value zynkTableGet(ZynkEnv *env, const char *str);
-bool zynkTableDelete(ZynkEnv *env, const char *str);
+bool zynkTableDelete(ZynkEnv *env, const char *str, ArenaManager *manager);
 ZynkEnvEntry* zynkFindEntry(ZynkEnv *env, const char *key, bool niu);
 
 #endif // ZYNK_ENVIROMENT
