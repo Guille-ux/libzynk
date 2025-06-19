@@ -10,5 +10,6 @@
 #include "runtime/assign.h"
 #include "runtime/object_mng.h"
 #include "runtime/object_rf.h"
+#include "runtime/realloc.h"
 
 #endif
