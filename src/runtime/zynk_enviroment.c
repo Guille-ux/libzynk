@@ -32,7 +32,7 @@ bool initZynkTable(ZynkEnvTable *table, size_t capacity, ArenaManager *manager) 
   return true;
 }
 bool freeZynkTable(ArenaManager *manager, ZynkEnvTable *table) {
-  if (table==NULL || table->entries==NULL || table->capacity==0) {
+  if (table==NULL || table->entries==NULL || table->capacity==0 || manager==NULL) {
     return false;
   } 
   for (size_t i=0;i<table->capacity;i++) {
@@ -50,7 +50,10 @@ bool freeZynkTable(ArenaManager *manager, ZynkEnvTable *table) {
     table->entries[i]->name=NULL;
     table->entries[i]=NULL;
   }
-  return (sysarena_free(manager, table->entries) && sysarena_free(manager, table));
+  bool result=(sysarena_free(manager, table->entries) && sysarena_free(manager, table));
+  table->entries=NULL;
+  table=NULL;
+  return result;
 }
 bool zynkTableSet(ZynkEnv *env, const char *str, Value value) {
   if (env==NULL || str==NULL || env->local->capacity==0 || env->local==NULL) {

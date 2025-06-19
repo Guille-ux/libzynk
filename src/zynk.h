@@ -8,5 +8,7 @@
 #include "runtime/zynk_enviroment.h"
 #include "runtime/memory.h"
 #include "runtime/assign.h"
+#include "runtime/object_mng.h"
+#include "runtime/object_rf.h"
 
 #endif

@@ -10,12 +10,12 @@
 struct ZynkObj;
 struct Value;
 struct ZynkString;
-struct ZynkFunction;
+struct ZynkNativeFunction;
 struct ZynkArray;
 struct ZynkEnv;
 struct ZynkEnvTable;
 struct ZynkEnvEntry;
-
+struct ZynkFunction;
 
 typedef enum {
   ZYNK_NULL,
@@ -27,7 +27,8 @@ typedef enum {
 
 typedef enum {
   ObjString,
-  ObjFunction,
+  ObjNativeFunction,
+  ObjFuntion,
   ObjArray,
 } ObjType;
 
@@ -36,12 +37,12 @@ typedef enum {
 typedef struct ZynkObj ZynkObj;
 typedef struct Value Value;
 typedef struct ZynkString ZynkString;
-typedef struct ZynkFunction ZynkFunction;
+typedef struct ZynkNativeFunction ZynkNativeFunction;
 typedef struct ZynkArray ZynkArray;
 typedef struct ZynkEnv ZynkEnv;
 typedef struct ZynkEnvTable ZynkEnvTable;
 typedef struct ZynkEnvEntry ZynkEnvEntry;
-
+typedef struct ZynkFunction ZynkFunction;
 
 
 typedef Value (*ZynkFuncPtr)(ZynkEnv* env, ZynkArray* args);
@@ -56,14 +57,15 @@ struct Value {
     uint8_t byte;
     ZynkObj *obj; 
   } as;
-  uint32_t ref_count; 
 };
 
 struct ZynkObj {
   ObjType type;
+  uint32_t ref_count;
   union {
     ZynkString *string;   
-    ZynkFunction *function; 
+    ZynkFunction *function;
+    ZynkNativeFunction *native_func;
     ZynkArray *array;    
   } obj;
 };

@@ -13,6 +13,11 @@ struct ZynkString {
 
 struct ZynkFunction {
   const char *name;
+};
+
+
+struct ZynkNativeFunction {
+  const char *name;
   ZynkFuncPtr func_ptr; 
 };
 

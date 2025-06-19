@@ -6,7 +6,7 @@
 #include "../common.h"
 
 inline void initVal(Value *val) {
-  val->ref_count=0;
+  // something here to initialize values
 }
 
 Value zynkNull() {

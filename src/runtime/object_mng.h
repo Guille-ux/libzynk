@@ -1,0 +1,4 @@
+#ifndef ZYNK_OBJECT_MANAGER
+#define ZYNK_OBJECT_MANAGER
+
+#endif
