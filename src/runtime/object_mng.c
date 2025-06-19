@@ -36,7 +36,7 @@ Value zynkCreateString(ArenaManager *manager, const char *str) {
   string->string[strlen]='\0';
   string->len=strlen;
 
-  obj->obj->string=string;
+  obj->obj.string=string;
 
   Value ret;
   ret.type=ZYNK_OBJ;
