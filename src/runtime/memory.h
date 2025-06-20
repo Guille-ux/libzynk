@@ -34,5 +34,11 @@ bool zynkValuesNot(Value val);
 bool zynkValuesNand(Value a, Value b);
 bool zynkValuesNor(Value a, Value b);
 bool zynkValuesXnor(Value a, Value b);
+bool zynkValuesTrue(Value val);
 
+// Math
+Value zynkValuesAdd(Value a, Value b);
+Value zynkValuesSub(Value a, Value b);
+Value zynkValuesMul(Value a, Value b);
+Value zynkValuesDiv(Value a, Value b);
 #endif

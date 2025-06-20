@@ -135,3 +135,29 @@ bool zynkValuesNor(Value a, Value b) {
 bool zynkValuesXnor(Value a, Value b) {
   return !zynkValuesXor(a, b);
 }
+
+Value zynkValuesAdd(Value a, Value b) {
+  if (!areNumbers(a, b)) return zynkNull(); // wtf?
+
+  return zynkNumber(a.as.number + b.as.number);
+}
+
+Value zynkValuesSub(Value a, Value b) {
+  if (!areNumbers(a, b)) return zynkNull(); // wtf?
+
+  return zynkNumber(a.as.number - b.as.number);
+}
+
+Value zynkValuesMul(Value a, Value b) {
+  if (!areNumbers(a, b)) return zynkNull(); // wtf?
+
+  return zynkNumber(a.as.number * b.as.number);
+}
+
+Value zynkValuesDiv(Value a, Value b) {
+  if (!areNumbers(a, b)) return zynkNull(); // wtf?
+
+  if (a.as.number==0 || b.as.number==0) return zynkNull(); // ZeroDivisionError
+
+  return zynkNumber(a.as.number / b.as.number);
+}

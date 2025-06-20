@@ -27,5 +27,8 @@ struct ZynkArray {
   Value* array; 
 };
 
+Value zynkArrayGet(Value array_val, Value index_val);
+void zynkArraySet(ArenaManager *manager, Value array_val, Value index_val, Value new_element);
+Value zynkArrayPop(ArenaManager *manager, Value array_val);
 
 #endif // ZYNKL_OBJECTS

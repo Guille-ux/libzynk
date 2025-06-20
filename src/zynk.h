@@ -11,5 +11,7 @@
 #include "runtime/object_mng.h"
 #include "runtime/object_rf.h"
 #include "runtime/realloc.h"
+#include "natives.h"
+#include "runtime/calls.h"
 
 #endif
