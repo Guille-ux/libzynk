@@ -28,7 +28,7 @@ typedef enum {
 typedef enum {
   ObjString,
   ObjNativeFunction,
-  ObjFuntion,
+  ObjFunction,
   ObjArray,
 } ObjType;
 

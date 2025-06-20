@@ -23,6 +23,7 @@ struct ZynkNativeFunction {
 
 struct ZynkArray {
   size_t len;
+  size_t capacity;
   Value* array; 
 };
 

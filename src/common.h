@@ -15,6 +15,6 @@
 
 #define TABLE_CAPACITY 1024
 #define END_CHAR '\0'
-#define NOTHING
+#define GROW_NUM 8
 
 #endif

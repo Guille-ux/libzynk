@@ -11,6 +11,9 @@
 #include "assign.h"
 #include "hash.h"
 #include "../sysarena/sysarena.h"
+#include "realloc.h"
+#include "object_rf.h"
+#include "object_mng.h"
 
 struct ZynkEnvEntry {
   char *name;
@@ -31,7 +34,7 @@ struct ZynkEnv {
 bool zynkEnvInit(ZynkEnv *env, size_t capacity, ZynkEnv *enclosing, ArenaManager *manager);
 bool initZynkTable(ZynkEnvTable *table, size_t capacity, ArenaManager *manager);
 bool freeZynkTable(ArenaManager *manager, ZynkEnvTable *table);
-bool zynkTableSet(ZynkEnv *env, const char *str, Value value);
+bool zynkTableSet(ArenaManager *manager, ZynkEnv *env, const char *str, Value value);
 bool zynkTableNew(ZynkEnv *env, const char *str, Value value, ArenaManager *manager);
 Value zynkTableGet(ZynkEnv *env, const char *str);
 bool zynkTableDelete(ZynkEnv *env, const char *str, ArenaManager *manager);
