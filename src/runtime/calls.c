@@ -13,7 +13,7 @@
 Value zynkCallFunctizon(ArenaManager *manager, ZynkEnv *env, const char *name, Value args) {
   Value func = zynkTableGet(env, name);
 
-  if (!IS_OBJ(func) || !IS_ARRAY(AS_OBJ(args))) return zynkNull();
+  if (!IS_OBJ(args) || !IS_OBJ(func) || !IS_ARRAY(AS_OBJ(args))) return zynkNull();
 
   ZynkArray *array_obj=AS_OBJ(args)->obj.array;
 
