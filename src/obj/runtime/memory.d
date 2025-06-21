@@ -1,13 +1,13 @@
 obj/runtime/memory.o: runtime/memory.c runtime/memory.h runtime/types.h \
+ runtime/../sysarena/sysarena.h runtime/../sysarena/types.h \
  runtime/objects.h runtime/../common.h runtime/../sysarena/sysarena.h \
- runtime/../sysarena/types.h runtime/../sysarena/types.h \
- runtime/../runtime/objects.h runtime/../runtime/types.h \
- runtime/../runtime/zynk_enviroment.h runtime/../runtime/../common.h \
- runtime/../runtime/memory.h runtime/../runtime/types.h \
- runtime/../runtime/assign.h runtime/../runtime/hash.h \
- runtime/../runtime/../sysarena/sysarena.h runtime/../runtime/realloc.h \
- runtime/../runtime/../zynk.h runtime/../runtime/../common.h \
- runtime/../runtime/../runtime/hash.h \
+ runtime/../sysarena/types.h runtime/../runtime/objects.h \
+ runtime/../runtime/types.h runtime/../runtime/zynk_enviroment.h \
+ runtime/../runtime/../common.h runtime/../runtime/memory.h \
+ runtime/../runtime/types.h runtime/../runtime/assign.h \
+ runtime/../runtime/hash.h runtime/../runtime/../sysarena/sysarena.h \
+ runtime/../runtime/realloc.h runtime/../runtime/../zynk.h \
+ runtime/../runtime/../common.h runtime/../runtime/../runtime/hash.h \
  runtime/../runtime/../runtime/types.h \
  runtime/../runtime/../runtime/objects.h \
  runtime/../runtime/../runtime/zynk_enviroment.h \
@@ -34,13 +34,15 @@ runtime/memory.h:
 
 runtime/types.h:
 
+runtime/../sysarena/sysarena.h:
+
+runtime/../sysarena/types.h:
+
 runtime/objects.h:
 
 runtime/../common.h:
 
 runtime/../sysarena/sysarena.h:
-
-runtime/../sysarena/types.h:
 
 runtime/../sysarena/types.h:
 

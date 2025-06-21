@@ -2,9 +2,9 @@ obj/runtime/calls.o: runtime/calls.c runtime/../common.h \
  runtime/../sysarena/sysarena.h runtime/../sysarena/types.h \
  runtime/../sysarena/types.h runtime/../runtime/objects.h \
  runtime/../runtime/../common.h runtime/../runtime/types.h \
- runtime/../runtime/types.h runtime/../runtime/zynk_enviroment.h \
- runtime/../runtime/memory.h runtime/../runtime/objects.h \
- runtime/../runtime/object_rf.h runtime/../runtime/../sysarena/sysarena.h \
+ runtime/../runtime/../sysarena/sysarena.h runtime/../runtime/types.h \
+ runtime/../runtime/zynk_enviroment.h runtime/../runtime/memory.h \
+ runtime/../runtime/objects.h runtime/../runtime/object_rf.h \
  runtime/../runtime/object_mng.h runtime/../runtime/../zynk.h \
  runtime/../runtime/../common.h runtime/../runtime/../runtime/hash.h \
  runtime/../runtime/../runtime/types.h \
@@ -42,6 +42,8 @@ runtime/../runtime/../common.h:
 
 runtime/../runtime/types.h:
 
+runtime/../runtime/../sysarena/sysarena.h:
+
 runtime/../runtime/types.h:
 
 runtime/../runtime/zynk_enviroment.h:
@@ -51,8 +53,6 @@ runtime/../runtime/memory.h:
 runtime/../runtime/objects.h:
 
 runtime/../runtime/object_rf.h:
-
-runtime/../runtime/../sysarena/sysarena.h:
 
 runtime/../runtime/object_mng.h:
 

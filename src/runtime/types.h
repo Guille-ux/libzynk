@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stddef.h>
-
+#include "../sysarena/sysarena.h"
 
 struct ZynkObj;
 struct Value;
@@ -45,7 +45,7 @@ typedef struct ZynkEnvEntry ZynkEnvEntry;
 typedef struct ZynkFunction ZynkFunction;
 
 
-typedef Value (*ZynkFuncPtr)(ZynkEnv* env, ZynkArray* args);
+typedef Value (*ZynkFuncPtr)(ArenaManager *manager, ZynkEnv* env, ZynkArray* args);
 
 
 

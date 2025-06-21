@@ -50,3 +50,5 @@ Value zynkArrayPop(ArenaManager *manager, Value array_val) {
   array_obj->array=(Value *)reallocate(manager, (uint8_t *)array_obj->array, sizeof(Value)*array_obj->capacity, array_obj->len*sizeof(Value));
   return popped;
 }
+
+#undef IS_OBJ
