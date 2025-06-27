@@ -10,7 +10,7 @@
 #define AS_OBJ(val) (val.as.obj)
 #define IS_ARRAY(obj) (obj->type==ObjArray)
 
-Value zynkCallFunctizon(ArenaManager *manager, ZynkEnv *env, const char *name, Value args) {
+Value zynkCallFunction(ArenaManager *manager, ZynkEnv *env, const char *name, Value args) {
   Value func = zynkTableGet(env, name);
 
   if (!IS_OBJ(args) || !IS_OBJ(func) || !IS_ARRAY(AS_OBJ(args))) return zynkNull();

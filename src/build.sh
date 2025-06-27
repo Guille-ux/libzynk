@@ -1,1 +1,3 @@
 make
+
+cp libzynk.a ../

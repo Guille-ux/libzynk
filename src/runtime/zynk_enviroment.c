@@ -40,11 +40,11 @@ bool freeZynkTable(ArenaManager *manager, ZynkEnvTable *table) {
       continue;
     }
     if (table->entries[i]==NULL) continue;
-    if (sysarena_free(manager, table->entries[i])==false){
+    if (table->entries[i]->name==NULL) continue;
+    if (sysarena_free(manager, table->entries[i]->name)==false){
       return false;
     }
-    if (table->entries[i]->name==NULL) continue;
-    else if (sysarena_free(manager, table->entries[i]->name)==false){
+    if (sysarena_free(manager, table->entries[i])==false){
       return false;
     }
     table->entries[i]->name=NULL;
