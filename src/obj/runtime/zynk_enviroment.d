@@ -11,7 +11,7 @@ obj/runtime/zynk_enviroment.o: runtime/zynk_enviroment.c \
  runtime/../runtime/assign.h runtime/../runtime/object_mng.h \
  runtime/../runtime/object_rf.h runtime/../runtime/realloc.h \
  runtime/../runtime/../zynk.h runtime/../runtime/memory.h \
- runtime/../natives.h runtime/../runtime/calls.h \
+ runtime/../natives.h runtime/../zynk.h runtime/../runtime/calls.h \
  runtime/../runtime/zynk_enviroment.h runtime/../runtime/objects.h \
  runtime/../runtime/object_mng.h runtime/../runtime/object_rf.h \
  runtime/realloc.h runtime/assign.h runtime/hash.h
@@ -71,6 +71,8 @@ runtime/../runtime/../zynk.h:
 runtime/../runtime/memory.h:
 
 runtime/../natives.h:
+
+runtime/../zynk.h:
 
 runtime/../runtime/calls.h:
 

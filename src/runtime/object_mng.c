@@ -117,7 +117,7 @@ bool zynkArrayGrow(ArenaManager *manager, ZynkArray* array_ptr, uint32_t amount)
 
   if (new_cap < 8) new_cap=8; // minimum capacity
 
-  Value *new_array_data=(Value*)sysarena_reallocate(
+  Value *new_array_data=(Value*)reallocate(
       manager,
       (uint8_t *)array_ptr->array,
       old_cap*sizeof(Value),

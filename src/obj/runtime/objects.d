@@ -21,7 +21,7 @@ obj/runtime/objects.o: runtime/objects.c runtime/types.h \
  runtime/../runtime/../runtime/../sysarena/sysarena.h \
  runtime/../runtime/../runtime/../zynk.h \
  runtime/../runtime/../runtime/memory.h runtime/../runtime/../natives.h \
- runtime/../runtime/../runtime/calls.h \
+ runtime/../runtime/../zynk.h runtime/../runtime/../runtime/calls.h \
  runtime/../runtime/../runtime/zynk_enviroment.h \
  runtime/../runtime/../runtime/objects.h \
  runtime/../runtime/../runtime/object_mng.h \
@@ -97,6 +97,8 @@ runtime/../runtime/../runtime/../zynk.h:
 runtime/../runtime/../runtime/memory.h:
 
 runtime/../runtime/../natives.h:
+
+runtime/../runtime/../zynk.h:
 
 runtime/../runtime/../runtime/calls.h:
 

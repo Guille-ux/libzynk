@@ -8,7 +8,7 @@
 
 struct ZynkString {
   char *string;
-  size_t len;
+  uint32_t len;
 };
 
 struct ZynkFunction {
@@ -22,7 +22,7 @@ struct ZynkNativeFunction {
 };
 
 struct ZynkArray {
-  size_t len;
+  uint32_t len;
   size_t capacity;
   Value* array; 
 };

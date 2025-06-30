@@ -11,6 +11,6 @@
 #include "object_mng.h"
 #include "object_rf.h"
 
-Value zynkCallFunction(ZynkEnv *env, const char *name, Value args);
+Value zynkCallFunction(ArenaManager *manager, ZynkEnv *env, const char *name, Value args);
 
 #endif

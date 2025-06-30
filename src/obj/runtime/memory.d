@@ -23,7 +23,7 @@ obj/runtime/memory.o: runtime/memory.c runtime/memory.h runtime/types.h \
  runtime/../runtime/../runtime/object_rf.h \
  runtime/../runtime/../runtime/../sysarena/sysarena.h \
  runtime/../runtime/../runtime/realloc.h runtime/../runtime/../natives.h \
- runtime/../runtime/../runtime/calls.h \
+ runtime/../runtime/../zynk.h runtime/../runtime/../runtime/calls.h \
  runtime/../runtime/../runtime/zynk_enviroment.h \
  runtime/../runtime/../runtime/object_mng.h \
  runtime/../runtime/../runtime/object_rf.h runtime/../runtime/object_rf.h \
@@ -103,6 +103,8 @@ runtime/../runtime/../runtime/../sysarena/sysarena.h:
 runtime/../runtime/../runtime/realloc.h:
 
 runtime/../runtime/../natives.h:
+
+runtime/../runtime/../zynk.h:
 
 runtime/../runtime/../runtime/calls.h:
 

@@ -19,7 +19,7 @@ Value zynkArrayGet(Value array_val, Value index_val) {
 
   if (index_val.type != ZYNK_NUMBER) return zynkNull();
 
-  size_t index=(size_t)index_val.as.number;
+  uint32_t index=index_val.as.number;
 
   index = (array_obj->len + index) % array_obj->len; // solucionar problemas de out-of-bounds
   return array_obj->array[index];
@@ -30,9 +30,9 @@ void zynkArraySet(ArenaManager *manager, Value array_val, Value index_val, Value
 
   ZynkArray* array_obj = array_val.as.obj->obj.array;
 
-  if (index_val.type != ZYNK_NUMBER) return zynkNull();
+  if (index_val.type != ZYNK_NUMBER) return;
 
-  size_t index=(size_t)index_val.as.number;
+  uint32_t index=index_val.as.number;
 
   index = (array_obj->len + index) % array_obj->len;
 

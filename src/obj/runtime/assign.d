@@ -20,7 +20,7 @@ obj/runtime/assign.o: runtime/assign.c runtime/types.h \
  runtime/../runtime/../runtime/../sysarena/sysarena.h \
  runtime/../runtime/../runtime/../zynk.h \
  runtime/../runtime/../runtime/memory.h runtime/../runtime/../natives.h \
- runtime/../runtime/../runtime/calls.h \
+ runtime/../runtime/../zynk.h runtime/../runtime/../runtime/calls.h \
  runtime/../runtime/../runtime/types.h \
  runtime/../runtime/../runtime/zynk_enviroment.h \
  runtime/../runtime/../runtime/objects.h \
@@ -93,6 +93,8 @@ runtime/../runtime/../runtime/../zynk.h:
 runtime/../runtime/../runtime/memory.h:
 
 runtime/../runtime/../natives.h:
+
+runtime/../runtime/../zynk.h:
 
 runtime/../runtime/../runtime/calls.h:
 

@@ -17,7 +17,7 @@ obj/runtime/realloc.o: runtime/realloc.c runtime/realloc.h \
  runtime/../runtime/../runtime/object_mng.h \
  runtime/../runtime/../runtime/object_rf.h \
  runtime/../runtime/../runtime/realloc.h runtime/../runtime/../natives.h \
- runtime/../runtime/../runtime/calls.h \
+ runtime/../runtime/../zynk.h runtime/../runtime/../runtime/calls.h \
  runtime/../runtime/../runtime/../common.h \
  runtime/../runtime/../runtime/zynk_enviroment.h \
  runtime/../runtime/../runtime/objects.h \
@@ -81,6 +81,8 @@ runtime/../runtime/../runtime/object_rf.h:
 runtime/../runtime/../runtime/realloc.h:
 
 runtime/../runtime/../natives.h:
+
+runtime/../runtime/../zynk.h:
 
 runtime/../runtime/../runtime/calls.h:
 
